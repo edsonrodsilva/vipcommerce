@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Orders;
+use App\Models\Client;
+use App\Models\Order;
+use App\Models\TypePayment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OrderFactory extends Factory
@@ -12,7 +14,7 @@ class OrderFactory extends Factory
      *
      * @var string
      */
-    protected $model = Orders::class;
+    protected $model = Order::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +24,11 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'code' => $this->faker->unique()->randomNumber(),
+            'date' => $this->faker->dateTime(),
+            'comment' => $this->faker->text(255),
+            'client_id' => Client::all()->random()->id,
+            'type_payment_id' => TypePayment::all()->random()->id
         ];
     }
 }

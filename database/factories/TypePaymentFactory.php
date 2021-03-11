@@ -22,7 +22,7 @@ class TypePaymentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'description' => $this->faker->unique()->randomElement(['Dinheiro', 'Cartão', 'Depósito'])
         ];
     }
 }
