@@ -41,7 +41,11 @@ class ProductRepository implements ProductInterface
     {
         try {
             $product = new Product();
-            $product->name = $request->namecomplete;
+            $product->code = $request->code;
+            $product->name = $request->name;
+            $product->color = $request->color;
+            $product->size = $request->size;
+            $product->price = $request->price;
             $product->save();
 
             return $this->success("Product created", $product, 200);
@@ -58,7 +62,11 @@ class ProductRepository implements ProductInterface
             //Check the product
             if (!$product) return $this->error("No product with ID $id", 204);
 
-            $product->namecompleto = $request->namecompleto;
+            $product->code = $request->code;
+            $product->name = $request->name;
+            $product->color = $request->color;
+            $product->size = $request->size;
+            $product->price = $request->price;
             $product->save();
 
             return $this->success("Product updated", $product, 201);

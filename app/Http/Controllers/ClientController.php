@@ -57,7 +57,7 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($request, $id)
+    public function update(Request $request, $id)
     {
         return $this->clientInterface->updateClient($request, $id);
     }

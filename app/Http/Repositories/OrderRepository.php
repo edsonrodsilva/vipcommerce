@@ -5,6 +5,7 @@ namespace App\Repositories;
 use Illuminate\Http\Request;
 use App\Interfaces\OrderInterface;
 use App\Models\Order;
+use App\Services\Order\CreateOrderService;
 use App\Traits\ResponseApiTrait;
 use Exception;
 
@@ -12,6 +13,12 @@ class OrderRepository implements OrderInterface
 {
     //Use ResponseApiTrait Trai in this repository
     use ResponseApiTrait;
+
+    public function __construct(CreateOrderService $createOrderService)
+    {
+        $this->createOrderService = $createOrderService;
+    }
+
 
     public function getAllOrders()
     {
@@ -40,15 +47,7 @@ class OrderRepository implements OrderInterface
 
     public function createOrder(Request $request)
     {
-        try {
-            $order = new Order();
-            $order->name = $request->namecomplete;
-            $order->save();
-
-            return $this->success("Order created", $order, 200);
-        } catch (Exception $e) {
-            return $this->error($e->getMessage(), $e->getCode());
-        }
+        return $this->createOrderService->execute($request);
     }
 
     public function updateOrder(Request $request, $id)

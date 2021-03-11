@@ -15,7 +15,11 @@ class AddForeignClientsIdOrdersTable extends Migration
     {
         Schema::table('orders', function (Blueprint $table) {
             $table->unsignedBigInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->foreign('client_id')
+                ->references('id')
+                ->on('clients')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
