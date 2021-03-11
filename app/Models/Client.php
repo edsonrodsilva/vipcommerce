@@ -9,4 +9,14 @@ class Client extends Model
 {
     use HasFactory;
     protected $table = 'clients';
+
+    public function gender()
+    {
+        return $this->belongsTo(Gender::class, 'gender_id', 'id');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'client_id', 'id');
+    }
 }

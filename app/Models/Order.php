@@ -9,4 +9,14 @@ class Order extends Model
 {
     use HasFactory;
     protected $table = 'orders';
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id', 'id');
+    }
+
+    public function typePayment()
+    {
+        return $this->belongsTo(TypePayment::class, 'type_payment_id', 'id');
+    }
 }

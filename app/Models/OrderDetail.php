@@ -9,4 +9,14 @@ class OrderDetail extends Model
 {
     use HasFactory;
     protected $table = 'orders_details';
+
+    public function orderDetail()
+    {
+        return $this->belongsTo(Order::class, 'order_id', 'id');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'product_id', 'id');
+    }
 }
