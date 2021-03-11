@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ClientCreateRequest;
-use App\Http\Requests\ClientUpdateRequest;
 use App\Interfaces\ClientInterface;
+use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
@@ -14,7 +13,7 @@ class ClientController extends Controller
     /**
      * Create a new constructor for this controller
      */
-    public function __construct(ClientInterface $clientInterface)
+    public function __construct(ClientInterface $clientInterface, Request $request)
     {
         $this->clientInterface = $clientInterface;
     }
@@ -32,12 +31,12 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\ClientCreateRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ClientCreateRequest $clientCreateRequest)
+    public function store(Request $request)
     {
-        return $this->clientInterface->createClient($clientCreateRequest);
+        return $this->clientInterface->createClient($request);
     }
 
     /**
@@ -54,13 +53,13 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\ClientUpdateRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ClientUpdateRequest $clientUpdateRequest, $id)
+    public function update($request, $id)
     {
-        return $this->clientInterface->updateClient($clientUpdateRequest, $id);
+        return $this->clientInterface->updateClient($request, $id);
     }
 
     /**

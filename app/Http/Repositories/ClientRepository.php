@@ -2,8 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Http\Requests\ClientCreateRequest;
-use App\Http\Requests\ClientUpdateRequest;
+use Illuminate\Http\Request;
 use App\Interfaces\ClientInterface;
 use App\Models\Client;
 use App\Traits\ResponseApiTrait;
@@ -38,11 +37,15 @@ class ClientRepository implements ClientInterface
         }
     }
 
-    public function createClient(ClientCreateRequest $clientCreateRequest)
+    public function createClient(Request $request)
     {
         try {
             $client = new Client();
-            $client->name = $clientCreateRequest->namecomplete;
+            $client->code = $request->code;
+            $client->name = $request->name;
+            $client->cpf = $request->cpf;
+            $client->email = $request->email;
+            $client->gender_id = $request->gender_id;
             $client->save();
 
             return $this->success("Client created", $client, 200);
@@ -51,7 +54,7 @@ class ClientRepository implements ClientInterface
         }
     }
 
-    public function updateClient(ClientUpdateRequest $clientUpdateRequest, $id)
+    public function updateClient(Request $request, $id)
     {
         try {
             $client = Client::find($id);
@@ -59,7 +62,11 @@ class ClientRepository implements ClientInterface
             //Check the client
             if (!$client) return $this->error("No client with ID $id", 204);
 
-            $client->namecompleto = $clientUpdateRequest->namecompleto;
+            $client->code = $request->code;
+            $client->name = $request->name;
+            $client->cpf = $request->cpf;
+            $client->email = $request->email;
+            $client->gender_id = $request->gender_id;
             $client->save();
 
             return $this->success("Client updated", $client, 201);

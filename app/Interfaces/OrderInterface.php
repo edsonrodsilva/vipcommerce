@@ -2,14 +2,13 @@
 
 namespace App\Interfaces;
 
-use App\Http\Requests\OrderCreateRequest;
-use App\Http\Requests\OrderUpdateRequest;
+use Illuminate\Http\Request;
 
 interface OrderInterface
 {
     /**
-     * Get all clients
-     * @method  GET api/clients
+     * Get all orders
+     * @method  GET api/orders
      * @access  public
      */
     public function getAllOrders();
@@ -17,33 +16,33 @@ interface OrderInterface
     /**
      * Get Order By ID
      * @param   integer     $id
-     * @method  GET api/clients/{id}
+     * @method  GET api/orders/{id}
      * @access  public
      */
     public function getOrderById($id);
 
     /**
-     * Create | client
-     * @param   \App\Http\Requests\OrderCreateRequest  $request
-     * @method  POST  api/clients For Create
+     * Create | order
+     * @param   \Illuminate\Http\Request  $request
+     * @method  POST  api/orders For Create
      * @access  public
      */
-    public function createOrder(OrderCreateRequest $request);
+    public function createOrder(Request $request);
 
     /**
-     * Update client
+     * Update order
      *
-     * @param   \App\Http\Requests\OrderUpdateRequest  $request
+     * @param   \Illuminate\Http\Request  $request
      * @param   integer   $id
-     * @method  PUT  api/clients/{id} For Update
+     * @method  PUT  api/orders/{id} For Update
      * @access  public
      */
-    public function updateOrder(OrderUpdateRequest $request, $id);
+    public function updateOrder(Request $request, $id);
 
     /**
-     * Delete client
+     * Delete order
      * @param   integer     $id
-     * @method  DELETE  api/clients/{id}
+     * @method  DELETE  api/orders/{id}
      * @access  public
      */
     public function deleteOrder($id);

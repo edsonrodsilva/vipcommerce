@@ -2,8 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Http\Requests\ProductCreateRequest;
-use App\Http\Requests\ProductUpdateRequest;
+use Illuminate\Http\Request;
 use App\Interfaces\ProductInterface;
 use App\Models\Product;
 use App\Traits\ResponseApiTrait;
@@ -38,11 +37,11 @@ class ProductRepository implements ProductInterface
         }
     }
 
-    public function createProduct(ProductCreateRequest $productCreateRequest)
+    public function createProduct(Request $request)
     {
         try {
             $product = new Product();
-            $product->name = $productCreateRequest->namecomplete;
+            $product->name = $request->namecomplete;
             $product->save();
 
             return $this->success("Product created", $product, 200);
@@ -51,7 +50,7 @@ class ProductRepository implements ProductInterface
         }
     }
 
-    public function updateProduct(ProductUpdateRequest $productUpdateRequest, $id)
+    public function updateProduct(Request $request, $id)
     {
         try {
             $product = Product::find($id);
@@ -59,7 +58,7 @@ class ProductRepository implements ProductInterface
             //Check the product
             if (!$product) return $this->error("No product with ID $id", 204);
 
-            $product->namecompleto = $productUpdateRequest->namecompleto;
+            $product->namecompleto = $request->namecompleto;
             $product->save();
 
             return $this->success("Product updated", $product, 201);

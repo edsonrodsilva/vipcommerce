@@ -2,8 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Http\Requests\OrderCreateRequest;
-use App\Http\Requests\OrderUpdateRequest;
+use Illuminate\Http\Request;
 use App\Interfaces\OrderInterface;
 use App\Models\Order;
 use App\Traits\ResponseApiTrait;
@@ -18,6 +17,7 @@ class OrderRepository implements OrderInterface
     {
         try {
             $orders = Order::paginate(10);
+
             return $this->success('All Orders', $orders);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
@@ -38,11 +38,11 @@ class OrderRepository implements OrderInterface
         }
     }
 
-    public function createOrder(OrderCreateRequest $orderCreateRequest)
+    public function createOrder(Request $request)
     {
         try {
             $order = new Order();
-            $order->name = $orderCreateRequest->namecomplete;
+            $order->name = $request->namecomplete;
             $order->save();
 
             return $this->success("Order created", $order, 200);
@@ -51,7 +51,7 @@ class OrderRepository implements OrderInterface
         }
     }
 
-    public function updateOrder(OrderUpdateRequest $orderUpdateRequest, $id)
+    public function updateOrder(Request $request, $id)
     {
         try {
             $order = Order::find($id);
@@ -59,7 +59,7 @@ class OrderRepository implements OrderInterface
             //Check the order
             if (!$order) return $this->error("No order with ID $id", 204);
 
-            $order->namecompleto = $orderUpdateRequest->namecompleto;
+            $order->namecompleto = $request->namecompleto;
             $order->save();
 
             return $this->success("Order updated", $order, 201);

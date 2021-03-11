@@ -2,8 +2,7 @@
 
 namespace App\Interfaces;
 
-use App\Http\Requests\ClientCreateRequest;
-use App\Http\Requests\ClientUpdateRequest;
+use Illuminate\Http\Request;
 
 interface ClientInterface
 {
@@ -24,21 +23,21 @@ interface ClientInterface
 
     /**
      * Create | client
-     * @param   \App\Http\Requests\ClientCreateRequest  $request
+     * @param   \Illuminate\Http\Request  $request
      * @method  POST  api/clients For Create
      * @access  public
      */
-    public function createClient(ClientCreateRequest $request);
+    public function createClient(Request $request);
 
     /**
      * Update client
      *
-     * @param   \App\Http\Requests\ClientUpdateRequest  $request
+     * @param   \Illuminate\Http\Request  $request
      * @param   integer   $id
      * @method  PUT  api/clients/{id} For Update
      * @access  public
      */
-    public function updateClient(ClientUpdateRequest $request, $id);
+    public function updateClient(Request $request, $id);
 
     /**
      * Delete client

@@ -2,14 +2,13 @@
 
 namespace App\Interfaces;
 
-use App\Http\Requests\ProductCreateRequest;
-use App\Http\Requests\ProductUpdateRequest;
+use Illuminate\Http\Request;
 
 interface ProductInterface
 {
     /**
-     * Get all clients
-     * @method  GET api/clients
+     * Get all products
+     * @method  GET api/products
      * @access  public
      */
     public function getAllProducts();
@@ -17,33 +16,33 @@ interface ProductInterface
     /**
      * Get Product By ID
      * @param   integer     $id
-     * @method  GET api/clients/{id}
+     * @method  GET api/products/{id}
      * @access  public
      */
     public function getProductById($id);
 
     /**
-     * Create | client
-     * @param   \App\Http\Requests\ProductCreateRequest  $request
-     * @method  POST  api/clients For Create
+     * Create | product
+     * @param   \Illuminate\Http\Request  $request
+     * @method  POST  api/products For Create
      * @access  public
      */
-    public function createProduct(ProductCreateRequest $request);
+    public function createProduct(Request $request);
 
     /**
-     * Update client
+     * Update product
      *
-     * @param   \App\Http\Requests\ProductUpdateRequest  $request
+     * @param   \Illuminate\Http\Request  $request
      * @param   integer   $id
-     * @method  PUT  api/clients/{id} For Update
+     * @method  PUT  api/products/{id} For Update
      * @access  public
      */
-    public function updateProduct(ProductUpdateRequest $request, $id);
+    public function updateProduct(Request $request, $id);
 
     /**
-     * Delete client
+     * Delete product
      * @param   integer     $id
-     * @method  DELETE  api/clients/{id}
+     * @method  DELETE  api/products/{id}
      * @access  public
      */
     public function deleteProduct($id);
