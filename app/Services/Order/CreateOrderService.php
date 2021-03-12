@@ -9,7 +9,6 @@ use Exception;
 
 class CreateOrderService
 {
-
     use ResponseApiTrait;
 
     public function execute($request)
