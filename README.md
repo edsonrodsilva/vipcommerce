@@ -2,6 +2,10 @@
 # APP DE TESTE VIPCOMMERCE
 API RESTful
 
+Existem inumeras formas de deixar seu aplicativo com uma estrutura pronta para evolução, com funcionalidade comum de acesso a dados, fornecendo melhor capacidade de manutenção e desacoplando a infraestrutura ou tecnologia usada para acessar bancos de dados da camada de modelo de domínio.
+
+
+
 ## Features
     1. RESOURCE Clients
 
@@ -17,14 +21,23 @@ API RESTful
 ## Cronagrama de desenvolvimento
 ![Screenshot](/public/images/cronagrama_de_desenvolvimento.png)
 
-## Instruções
-Voce pode testar a API online no link:
-[< link da API >](https://apivipcommerce.edsonrodrigues.com.br)
-
-## Rotas
+## Tipos de Rotas
 ![Screenshot](/public/images/routes.png)
 
+## Instruções
+Você pode testar a API online no link:
+[< link da API >](https://apivipcommerce.edsonrodrigues.com.br)
+
 ## Instruções para rodar a API local
+1- clone o projeto
+2- crie um banco de dados no mysql sugiro o nome vipcommerce.
+3- configure o arquivo .env com as credenciar do banco de dados.
+4- rode as migrations para criar as tabelas.
+5- php artisan migrate
+6- rode o db:seed para popular as tabelas com dados faker. 
+7- php artisan db:seed 
+8- Test a API usando Insomnia ou Postman para acessar os recursos listados abaixo.
+
 
 ## Tecnologias e ferramentas
 <!--ts-->
@@ -55,8 +68,6 @@ Voce pode testar a API online no link:
 <!--te-->
 
 ## Conclusão ##
-Acabamos de fazer um API usando o Repository Pattern.
-Tornar seu código mais estruturado, consistente é muito importante, isso tornará seu código mais fácil de entender e manter.
-Nunca escreva nenhuma lógica no controlador, está tudo bem se você precisar.
-Torne seu código mais reutilizável no futuro.
-E então a API de resposta é mais legível e consistente.
+Com mais de 10 anos de experiência me fez ver o quanto é importante tornar seu código mais estruturado. Nunca escrever nenhuma lógica no controlador, está tudo bem se você precisar.
+Criei a API usando o Repository Pattern. Com o objetivo de tornar o código mais estruturado, consistente, isso tornará seu código mais fácil de entender e manter.
+Torne seu código mais reutilizável no futuro é muito importante.
