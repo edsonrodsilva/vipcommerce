@@ -26,10 +26,6 @@ Se eu puder enviar em outra oportunidade gostaria muito.
 ## Tipos de Rotas
 ![Screenshot](/public/images/routes.png)
 
-## Instruções
-Você pode testar a API online no link:
-[< link da API >](https://apivipcommerce.edsonrodrigues.com.br)
-
 ## Instruções para rodar a API local
 <!--ts-->
     1- clone o projeto
