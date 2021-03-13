@@ -223,7 +223,7 @@
 
                     <tr>
                         <td align="center" class="innerpadding bodycopy">
-                            <p>Dúvidas ou sugestões, envie email para x.x.com.br</p>
+                            <p>Dúvidas ou sugestões, envie email para contato@edsonrodrigues.com.br</p>
                         </td>
                     </tr>
                 </table>

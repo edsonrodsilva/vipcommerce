@@ -20,22 +20,22 @@ class OrderEmailRepository implements OrderEmailInterface
 
     public function orderEmailSend(Request $request)
     {
-        // try {
-        $order = Order::findOrFail($request->id);
+        try {
+            $order = Order::findOrFail($request->id);
 
-        // Check the user
-        if (!$order) return $this->error("No order with ID $request->id", 204);
+            // Check the user
+            if (!$order) return $this->error("No order with ID $request->id", 204);
 
-        if ($order->client->email) {
+            if ($order->client->email) {
 
-            Mail::to($order->client->email)->send(new OrderShipped($order));
+                Mail::to($order->client->email)->send(new OrderShipped($order));
 
-            return $this->success('Email success send', $order);
+                return $this->success("Email sent success to client $order->client->email", []);
+            }
+
+            $this->error("Order owner not have email", 204);
+        } catch (Exception $e) {
+            return $this->error($e->getMessage(), $e->getCode());
         }
-
-        $this->error("Order owner not have email", 204);
-        // } catch (Exception $e) {
-        //     return $this->error($e->getMessage(), $e->getCode());
-        // }
     }
 }
