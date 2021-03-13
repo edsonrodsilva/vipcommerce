@@ -19,4 +19,9 @@ class Order extends Model
     {
         return $this->belongsTo(TypePayment::class, 'type_payment_id', 'id');
     }
+
+    public function itens()
+    {
+        return $this->hasMany(OrderDetail::class, 'order_id', 'id');
+    }
 }
