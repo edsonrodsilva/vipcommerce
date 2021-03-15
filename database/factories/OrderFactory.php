@@ -24,11 +24,12 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            'code' => $this->faker->unique()->randomNumber(),
+            'code' => uniqid('vip-'),
             'date' => $this->faker->dateTime(),
             'comment' => $this->faker->text(255),
             'client_id' => Client::all()->random()->id,
-            'type_payment_id' => TypePayment::all()->random()->id
+            'type_payment_id' => TypePayment::all()->random()->id,
+            'total' => 0
         ];
     }
 }

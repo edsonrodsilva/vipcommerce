@@ -24,12 +24,24 @@ class OrderDetailFactory extends Factory
     public function definition()
     {
 
+        //get product random
         $product = Product::inRandomOrder()->first();
 
+        //get order random
+        $order = Order::inRandomOrder()->first();
+
+        $total = 0;
+        foreach ($order->itens as $item) {
+            $total += $item->amount * $item->price;
+        }
+
+        $order->total = $total;
+        $order->save();
+
         return [
-            'order_id' => Product::inRandomOrder()->first()->id,
+            'order_id' => $order->id,
             'product_id' => $product->id,
-            'amount' => $this->faker->numberBetween(1, 1000),
+            'amount' => $this->faker->numberBetween(1, 3),
             'price' => $product->price
         ];
     }

@@ -26,7 +26,7 @@ API RESTful
 
 
 ## Modeling databases
-![Screenshot](/public/images/modelo_database.png)
+![Screenshot](/public/images/modelo_database_1_0_4.png)
 
 
 ## Cronagrama de desenvolvimento
@@ -35,11 +35,11 @@ A entrega acabou coincidindo com as entregas de projetos que estou finalizando.
 Se eu puder enviar em outra oportunidade gostaria muito.
 
 
-![Screenshot](/public/images/cronagrama_de_desenvolvimento.png)
+![Screenshot](/public/images/cronagrama_de_desenvolvimento_v2.png)
 
 
 ## Rotas | Controllers | Metodos
-![Screenshot](/public/images/routes.png)
+![Screenshot](/public/images/routes_v2.png)
 <!--ts-->
     | GET|HEAD | api/clients
     | POST     | api/clients
@@ -50,7 +50,8 @@ Se eu puder enviar em outra oportunidade gostaria muito.
     | POST     | api/orders
     | GET|HEAD | api/orders/{id}
     | PUT      | api/orders/{id}
-    | DELETE   | api/orders/{id}   
+    | DELETE   | api/orders/{id}
+    | POST     | api/orders/{id}/sendmail   
     | GET|HEAD | api/products   
     | POST     | api/products   
     | GET|HEAD | api/products/{id}

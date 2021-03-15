@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderEmailRepository implements OrderEmailInterface
 {
-
     //Use ResponseApiTrait Trai in this repository
     use ResponseApiTrait;
 
@@ -23,17 +22,18 @@ class OrderEmailRepository implements OrderEmailInterface
         try {
             $order = Order::findOrFail($request->id);
 
-            // Check the user
+            // Check the order exists
             if (!$order) return $this->error("No order with ID $request->id", 204);
 
+            // if the client has email registred, we do send info the order for he
             if ($order->client->email) {
 
                 Mail::to($order->client->email)->send(new OrderShipped($order));
 
-                return $this->success("Email sent success to client $order->client->email", []);
+                return $this->success("Email sent success to client " . $order->client->email, []);
             }
 
-            $this->error("Order owner not have email", 204);
+            $this->error("Order owner not have email registred", 204);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }

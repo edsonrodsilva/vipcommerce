@@ -196,15 +196,9 @@
                                         <!--footer!-->
                                         <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td width="20%" style="font-size: 13px!important;border-bottom:1px solid;padding:3px;border-right: 0px!important;border-top: 0px!important;" colspan="2" align="center" style="padding: 5px 0 0 0;"></td>
-                                                <td width="60%" style="font-size: 13px!important;border-bottom:1px solid;padding:3px;border-right: 0px!important;border-top: 0px!important;" colspan="2" align="right" style="padding: 5px 0 0 0;">Valor:</td>
-                                                <td width="20%" style="font-size: 13px!important;border-bottom:1px solid;padding:3px;border-top: 0px!important;" colspan="1" align="right" style="padding: 5px 0 0 0;">R$ {{AppHelperFunction::formatReal($order->id)}}</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td width="20%" style="font-size: 13px!important;border-bottom:1px solid;padding:3px;border-right: 0px!important;border-top: 0px!important;" colspan="2" align="center" style="padding: 5px 0 0 0;"></td>
-                                                <td width="60%" style="font-size: 13px!important;border-bottom:1px solid;padding:3px;border-right: 0px!important;border-top: 0px!important;" colspan="2" align="right" style="padding: 5px 0 0 0;">Total:</td>
-                                                <td width="20%" style="font-size: 13px!important;border-bottom:1px solid;padding:3px;border-top: 0px!important;" colspan="1" align="right" style="padding: 5px 0 0 0;">R$ {{AppHelperFunction::formatReal($order->id)}}</td>
+                                                <td width="20%" style="font-size: 18px!important;border-bottom:1px solid;padding:3px;border-right: 0px!important;border-top: 0px!important;" colspan="2" align="center" style="padding: 5px 0 0 0;"></td>
+                                                <td width="60%" style="font-size: 18px!important;border-bottom:1px solid;padding:3px;border-right: 0px!important;border-top: 0px!important;" colspan="2" align="right" style="padding: 5px 0 0 0;">Total:</td>
+                                                <td width="20%" style="font-size: 18px!important;border-bottom:1px solid;padding:3px;border-top: 0px!important;" colspan="1" align="right" style="padding: 5px 0 0 0;">R$ {{AppHelperFunction::formatReal($order->total)}}</td>
                                             </tr>
 
                                         </table>
