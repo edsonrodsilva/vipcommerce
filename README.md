@@ -31,6 +31,7 @@ API RESTful
 
 
 ## Cronagrama de desenvolvimento
+Os testes eu entendo que precisam ser melhorados, pois não estão totalmente completo. Mas claro posso trabalhar isto. 🚀
 ![Screenshot](/public/images/cronagrama_de_desenvolvimento_v4.png)
 
 
