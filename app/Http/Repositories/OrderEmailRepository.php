@@ -15,8 +15,6 @@ class OrderEmailRepository implements OrderEmailInterface
     //Use ResponseApiTrait Trai in this repository
     use ResponseApiTrait;
 
-    protected $sendEmailOrderService;
-
     public function orderEmailSend(Request $request)
     {
         try {

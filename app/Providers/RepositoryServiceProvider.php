@@ -30,5 +30,10 @@ class RepositoryServiceProvider extends ServiceProvider
             'App\Interfaces\OrderEmailInterface',
             'App\Repositories\OrderEmailRepository'
         );
+
+        $this->app->bind(
+            'App\Interfaces\OrderReportInterface',
+            'App\Repositories\OrderReportRepository'
+        );
     }
 }
