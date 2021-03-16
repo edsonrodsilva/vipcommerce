@@ -62,7 +62,7 @@ API RESTful
     2 - Instale as dependencias usando o comando.
     composer install
     3- Crie um banco de dados no mysql sugiro o nome vipcommerce.
-    4- configure o arquivo .env com as credenciais do banco de dados de da sua conta do https://mailtrap.io/.
+    4- Configure o arquivo .env com as credenciais do banco de dados de da sua conta do https://mailtrap.io.
     5- rode as migrations para criar as tabelas. php artisan migrate
     6- rode as seeder para popular as tabelas com dados faker. 
     php artisan db:seed
