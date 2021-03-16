@@ -205,6 +205,60 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "sendEmailOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"36373838\",\n    \"name\": \"Edson Rodrgies\",    \n    \"comment\": \"new order\",\n    \"client_id\": \"1\",\n    \"type_payment\": \"1\",\n    \"products\": [\n        {\n            \"product_id\": 1,\n            \"amount\": 2,\n            \"price\": 200\n        },\n        {\n            \"product_id\": 2,\n            \"amount\": 5,\n            \"price\": 45\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateReportOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"36373838\",\n    \"name\": \"Edson Rodrgies\",    \n    \"comment\": \"new order\",\n    \"client_id\": \"1\",\n    \"type_payment\": \"1\",\n    \"products\": [\n        {\n            \"product_id\": 1,\n            \"amount\": 2,\n            \"price\": 200\n        },\n        {\n            \"product_id\": 2,\n            \"amount\": 5,\n            \"price\": 45\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},

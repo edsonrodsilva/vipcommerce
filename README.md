@@ -6,6 +6,7 @@ Criar uma API que contenha as seguintes Resources e
 suas rotas
 *API RESTful*
 
+
 Existem inúmeras formas de deixar seu aplicativo com uma estrutura pronta para evolução, com funcionalidade comum de acesso a dados, fornecendo melhor capacidade de manutenção e desacoplando a infraestrutura ou tecnologia usada para acessar bancos de dados da camada de modelo de domínio.
 
 
@@ -30,16 +31,11 @@ API RESTful
 
 
 ## Cronagrama de desenvolvimento
-Infelizmente não deu tempo de concluir o teste por completo.
-A entrega acabou coincidindo com as entregas de projetos que estou finalizando.
-Se eu puder enviar em outra oportunidade gostaria muito.
-
-
-![Screenshot](/public/images/cronagrama_de_desenvolvimento_v2.png)
+![Screenshot](/public/images/cronagrama_de_desenvolvimento_v3.png)
 
 
 ## Rotas | Controllers | Metodos
-![Screenshot](/public/images/routes_v2.png)
+![Screenshot](/public/images/routes_v3.png)
 <!--ts-->
     | GET|HEAD | api/clients
     | POST     | api/clients
@@ -51,6 +47,7 @@ Se eu puder enviar em outra oportunidade gostaria muito.
     | GET|HEAD | api/orders/{id}
     | PUT      | api/orders/{id}
     | DELETE   | api/orders/{id}
+    | POST     | api/orders/{id}/report
     | POST     | api/orders/{id}/sendmail   
     | GET|HEAD | api/products   
     | POST     | api/products   
@@ -72,6 +69,8 @@ Se eu puder enviar em outra oportunidade gostaria muito.
     7 - levante o servidor usando o comando.
     php artisan serve
     8- Test a API usando Insomnia ou Postman para acessar os recursos listados abaixo.
+    9 - Rode os testes para testar a API
+    php artisan test
 <!--te-->
 
 
