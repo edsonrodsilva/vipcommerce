@@ -23,7 +23,7 @@ class ClientTest extends TestCase
 
         $this->json('POST', 'api/clients', $clientData, ['Accept' => 'application/json'])
             ->assertJson([
-                "message" => "Client created successfully",
+                "message" => "Client created",
                 "error" => false,
                 "statusCode" => 201,
                 "results" => [
@@ -59,7 +59,7 @@ class ClientTest extends TestCase
 
         $this->json('GET', 'api/clients', ['Accept' => 'application/json'])
             ->assertJson([
-                "message" => "All clients Successfully",
+                "message" => "All clients",
                 "error" => false,
                 "statusCode" => 200,
                 "results" => [
@@ -99,7 +99,7 @@ class ClientTest extends TestCase
 
         $this->json('GET', 'api/clients/' . $client->id, [], ['Accept' => 'application/json'])
             ->assertJson([
-                "message" => "Client retrieve successfully",
+                "message" => "Client retrieve",
                 "error" => false,
                 "statusCode" => 200,
                 "results" => [
@@ -133,9 +133,9 @@ class ClientTest extends TestCase
             "gender_id" => 1
         ];
 
-        $this->json('PATCH', 'api/client/' . $client->id, $payload, ['Accept' => 'application/json'])
+        $this->json('PUT', 'api/clients/' . $client->id, $payload, ['Accept' => 'application/json'])
             ->assertJson([
-                "message" => "Client deleted successfully",
+                "message" => "Client updated",
                 "error" => false,
                 "statusCode" => 200,
                 "results" => [
@@ -161,9 +161,9 @@ class ClientTest extends TestCase
             "gender_id" => 1
         ]);
 
-        $this->json('DELETE', 'api/client/' . $client->id, [], ['Accept' => 'application/json'])
+        $this->json('DELETE', 'api/clients/' . $client->id, [], ['Accept' => 'application/json'])
             ->assertJson([
-                "message" => "Client deleted successfully",
+                "message" => "Client deleted",
                 "error" => false,
                 "statusCode" => 200
             ]);

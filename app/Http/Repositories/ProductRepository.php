@@ -17,7 +17,7 @@ class ProductRepository implements ProductInterface
     {
         try {
             $products = Product::paginate(10);
-            return $this->success('All Products', $products);
+            return $this->success('All products', $products);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
@@ -31,7 +31,7 @@ class ProductRepository implements ProductInterface
             //Check the product
             if (!$product) return $this->error("No product with ID $id", 204);
 
-            return $this->success("Product detail", $product);
+            return $this->success("Product retrieve", $product);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
