@@ -31,7 +31,7 @@ API RESTful
 
 
 ## Cronagrama de desenvolvimento
-![Screenshot](/public/images/cronagrama_de_desenvolvimento_v3.png)
+![Screenshot](/public/images/cronagrama_de_desenvolvimento_v4.png)
 
 
 ## Rotas | Controllers | Metodos
