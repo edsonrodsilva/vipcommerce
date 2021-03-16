@@ -34,7 +34,7 @@ API RESTful
 ![Screenshot](/public/images/cronagrama_de_desenvolvimento_v4.png)
 
 
-## Rotas | Controllers | Metodos
+## Rotas | Controllers | Métodos
 ![Screenshot](/public/images/routes_v3.png)
 <!--ts-->
     | GET|HEAD | api/clients
