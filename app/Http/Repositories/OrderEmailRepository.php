@@ -30,7 +30,7 @@ class OrderEmailRepository implements OrderEmailInterface
 
                 Mail::to($order->client->email)->send(new OrderShipped($order));
 
-                return $this->success("Email sent success to client " . $order->client->email, []);
+                return $this->success("Email sent success to client " . $order->client->email, [], 200);
             }
 
             $this->error("Order owner not have email registred", 204);

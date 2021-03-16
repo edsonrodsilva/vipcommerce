@@ -23,6 +23,7 @@ class ClientFactory extends Factory
     public function definition()
     {
         //Add provider Person
+        //This required for generate cpf faker
         $this->faker->addProvider(new Person($this->faker));
 
         return [

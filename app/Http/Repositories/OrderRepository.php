@@ -25,7 +25,7 @@ class OrderRepository implements OrderInterface
         try {
             $orders = Order::paginate(10);
 
-            return $this->success('All Orders', $orders);
+            return $this->success('All Orders', $orders, 200);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
@@ -39,7 +39,7 @@ class OrderRepository implements OrderInterface
             //Check the order
             if (!$order) return $this->error("No order with ID $id", 204);
 
-            return $this->success("Order detail", $order);
+            return $this->success("Order detail", $order, 200);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
@@ -61,7 +61,7 @@ class OrderRepository implements OrderInterface
             $order->namecompleto = $request->namecompleto;
             $order->save();
 
-            return $this->success("Order updated", $order, 201);
+            return $this->success("Order updated", $order, 200);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
@@ -77,7 +77,7 @@ class OrderRepository implements OrderInterface
 
             $order->delete();
 
-            return $this->success('Order deleted', $order);
+            return $this->success('Order deleted', $order, 200);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }

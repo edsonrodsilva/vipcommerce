@@ -17,7 +17,7 @@ class ClientRepository implements ClientInterface
     {
         try {
             $clients = Client::paginate(10);
-            return $this->success('All Clients', $clients);
+            return $this->success('All clients successfully', $clients);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
@@ -31,7 +31,7 @@ class ClientRepository implements ClientInterface
             //Check the client
             if (!$client) return $this->error("No client with ID $id", 204);
 
-            return $this->success("Client detail", $client);
+            return $this->success("Client retrieve successfully", $client);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
@@ -48,7 +48,7 @@ class ClientRepository implements ClientInterface
             $client->gender_id = $request->gender_id;
             $client->save();
 
-            return $this->success("Client created", $client, 200);
+            return $this->success("Client created successfully", $client, 201);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
@@ -69,7 +69,7 @@ class ClientRepository implements ClientInterface
             $client->gender_id = $request->gender_id;
             $client->save();
 
-            return $this->success("Client updated", $client, 201);
+            return $this->success("Client updated successfully", $client);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
@@ -85,7 +85,7 @@ class ClientRepository implements ClientInterface
 
             $client->delete();
 
-            return $this->success('Client deleted', $client);
+            return $this->success('Client deleted successfully', $client);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }

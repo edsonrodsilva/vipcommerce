@@ -44,7 +44,7 @@ class CreateOrderService
                     $order->save();
                 }
             }
-            return $this->success("Order created", $order, 200);
+            return $this->success("Order created", $order, 201);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }
