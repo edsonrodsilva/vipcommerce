@@ -78,6 +78,8 @@ Os testes eu entendo que precisam ser melhorados, pois não estão totalmente co
 ## Baixe aqui a collections do postman
 [< link da API >](https://github.com/edsonrodsilva/vipcommerce/blob/master/public/API-VIPCOMMENCE.postman_collection.json)
 
+[< Postman Collection >](https://www.getpostman.com/collections/c09b692659dfb79139b9)
+
 
 ## Tecnologias e ferramentas
 <!--ts-->    
